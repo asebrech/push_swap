@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:49:00 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/25 14:19:07 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/25 16:14:40 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_filllst(int ac, int *tab)
 
 	alst = NULL;
 	i = 0;
-	while (i < ac - 1)
+	while (i < ac)
 	{
 		new = ft_lstnew(tab[i]);
 		ft_lstadd_back(&alst, new);
