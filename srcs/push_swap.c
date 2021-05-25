@@ -6,14 +6,17 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:58:59 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/25 12:16:58 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/25 14:32:13 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_list lst)
+void	push_swap(t_list *lst)
 {
-	
+	while (lst)
+	{
+		printf ("%d ", lst->content);
+		lst = lst->next;
+	}
 }
-

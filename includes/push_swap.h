@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:45:15 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/25 13:31:28 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/25 14:30:40 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 # include "../libft/libft.h"
 
-int		*ft_filltab(int ac, char **av);
+# include <stdio.h>
+
 void	ft_exit(void);
-t_list	*ft_filllst(int *tab, int ac);
+void	push_swap(t_list *lst);
+int		*ft_filltab(int ac, char **av);
+t_list	*ft_filllst(int ac, int *tab);
 
 #endif

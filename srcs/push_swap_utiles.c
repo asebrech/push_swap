@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:49:00 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/25 13:47:49 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/25 14:19:07 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_exit(void)
 	exit(1);
 }
 
-t_list	*ft_filllst(int *tab, int ac)
+t_list	*ft_filllst(int ac, int *tab)
 {
 	int		i;
 	t_list	*new;
