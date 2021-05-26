@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:58:59 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/26 14:59:39 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:17:05 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 static void	printlst(t_list *lst)
 {
-	while (lst)
+	if (lst)
 	{
-		printf ("%d ", lst->content);
-		lst = lst->next;
+		while (lst)
+		{
+			printf ("%d ", lst->content);
+			lst = lst->next;
+		}
+		printf("\n");
 	}
-	printf("\n");
 }
 
 void	push_swap(t_list *a)

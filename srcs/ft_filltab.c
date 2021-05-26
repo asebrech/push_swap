@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 13:50:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/26 13:47:20 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:08:34 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_exit_tab(int *tab)
 {
 	free(tab);
-	ft_putstr_fd("Error\n", 1);
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
 
