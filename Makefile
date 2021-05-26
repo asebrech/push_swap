@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 16:13:10 by asebrech          #+#    #+#              #
-#    Updated: 2021/05/25 16:12:05 by asebrech         ###   ########.fr        #
+#    Updated: 2021/05/26 11:58:50 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRC = srcs/main.c \
 	  srcs/push_swap_utiles.c \
 	  srcs/push_swap.c \
 	  srcs/ft_swap.c \
-	  srcs/ft_push.c
+	srcs/ft_push.c \
+	srcs/ft_rotate.c \
+	srcs/ft_rrotate.c
 OBJ = $(SRC:.c=.o)
 RM = rm -rf
 

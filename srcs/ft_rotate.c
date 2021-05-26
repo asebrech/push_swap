@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 14:43:29 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/26 10:59:02 by asebrech         ###   ########.fr       */
+/*   Created: 2021/05/26 11:02:40 by asebrech          #+#    #+#             */
+/*   Updated: 2021/05/26 11:38:58 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_double_swap(t_list **a, t_list **b)
+void	ft_double_rotate(t_list **a, t_list **b)
 {
-	ft_swap(a, 'c');
-	ft_swap(b, 'c');
-	ft_putstr_fd("ss\n", 1);
+	ft_rotate(a, 'c');
+	ft_rotate(b, 'c');
+	ft_putstr_fd("rr\n", 1);
 }
 
-void	ft_swap(t_list **lst, char c)
+void	ft_rotate(t_list **lst, char c)
 {
-	t_list	*tmp;
+	t_list	*new;
 
 	if (*lst && (*lst)->next)
 	{
-		tmp = ft_lstnew((*lst)->content);
-		(*lst)->content = (*lst)->next->content;
-		(*lst)->next->content = tmp->content;
-		free(tmp);
+		new = ft_lstnew((*lst)->content);
+		ft_lstadd_back(lst, new);
+		*lst = (*lst)->next;
 	}
 	if (c == 'a')
-		ft_putstr_fd("sa\n", 1);
+		ft_putstr_fd("ra\n", 1);
 	else if (c == 'b')
-		ft_putstr_fd("sb\n", 1);
+		ft_putstr_fd("rb\n", 1);
 }
