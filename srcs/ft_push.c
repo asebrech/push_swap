@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 15:38:27 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/26 10:44:44 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/26 13:25:24 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ void	ft_push(t_list **a, t_list **b, char c)
 		*b = (*b)->next;
 		if (c == 'a')
 			ft_putstr_fd("pa\n", 1);
+		else if (c == 'b')
+			ft_putstr_fd("pb\n", 1);
 	}
 }

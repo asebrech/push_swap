@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/26 12:17:18 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/26 13:35:22 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 	tab = ft_filltab(ac - 1, &av[1]);
 	a = ft_filllst(ac - 1, tab);
 	free(tab);
-	ft_double_rrotate(&a, &b);
+	ft_double_rotate(&a, &b);
 	push_swap(a);
 	push_swap(b);
 	return (0);
