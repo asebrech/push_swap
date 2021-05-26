@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 13:50:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/25 15:56:24 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/26 13:47:20 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_isalldigit(char *str, int *tab)
 	int	i;
 
 	i = 0;
-	if (str[i] == '-' && str[i + 1] == '\0')
+	if (str[i] == '-' && !ft_isdigit(str[i + 1]))
 		ft_exit_tab(tab);
 	else if (str[i] == '-' && ft_isdigit(str[i + 1]))
 		i++;
