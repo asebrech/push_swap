@@ -6,13 +6,13 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:58:59 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/25 15:20:55 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/26 14:59:39 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_list *lst)
+static void	printlst(t_list *lst)
 {
 	while (lst)
 	{
@@ -20,4 +20,18 @@ void	push_swap(t_list *lst)
 		lst = lst->next;
 	}
 	printf("\n");
+}
+
+void	push_swap(t_list *a)
+{
+	t_list	*b;
+
+	b = NULL;
+	ft_push(&b, &a, 'b');
+	ft_push(&b, &a, 'b');
+	ft_push(&b, &a, 'b');
+	ft_push(&b, &a, 'b');
+	ft_double_rrotate(&a, &b);
+	printlst(a);
+	printlst(b);
 }

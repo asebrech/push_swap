@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 15:38:27 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/26 13:25:24 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/05/26 14:53:12 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_push(t_list **a, t_list **b, char c)
 	if (*b)
 	{
 		new = ft_lstnew((*b)->content);
-		ft_lstadd_front(a, new);
+		ft_lstadd_back(a, new);
 		*b = (*b)->next;
 		if (c == 'a')
 			ft_putstr_fd("pa\n", 1);
