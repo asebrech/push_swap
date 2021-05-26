@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 16:13:10 by asebrech          #+#    #+#              #
-#    Updated: 2021/05/26 11:58:50 by asebrech         ###   ########.fr        #
+#    Updated: 2021/05/26 14:02:06 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@ DLIB = libft
 PLIB = libft/libft.a
 NAME = libpush_swap.a
 EXEC = push_swap
-SRC = srcs/main.c \
-	  srcs/ft_filltab.c \
-	  srcs/push_swap_utiles.c \
-	  srcs/push_swap.c \
-	  srcs/ft_swap.c \
-	srcs/ft_push.c \
-	srcs/ft_rotate.c \
-	srcs/ft_rrotate.c
+SRC =	move/ft_push.c \
+	move/ft_swap.c \
+	move/ft_rotate.c \
+	move/ft_rrotate.c \
+	srcs/main.c \
+	srcs/push_swap.c \
+	srcs/push_swap_utiles.c \
+	srcs/ft_filltab.c
 OBJ = $(SRC:.c=.o)
 RM = rm -rf
 
