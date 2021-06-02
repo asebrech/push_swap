@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 11:02:40 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/26 13:35:41 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/02 19:43:44 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ void	ft_rotate(t_list **lst, char c)
 	{
 		new = ft_lstnew((*lst)->content);
 		ft_lstadd_back(lst, new);
+		new = *lst;
 		*lst = (*lst)->next;
+		free(new);
 		if (c == 'a')
 			ft_putstr_fd("ra\n", 1);
 		else if (c == 'b')

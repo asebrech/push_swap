@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_filltab.c                                       :+:      :+:    :+:   */
+/*   ft_fill.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 13:50:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/26 15:08:34 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/02 21:08:43 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_list	*ft_filllst(int ac, int *tab)
+{
+	int		i;
+	t_list	*new;
+	t_list	*alst;
+
+	alst = NULL;
+	i = 0;
+	while (i < ac)
+	{
+		new = ft_lstnew(tab[i]);
+		ft_lstadd_back(&alst, new);
+		i++;
+	}
+	return (alst);
+}
 
 static void	ft_exit_tab(int *tab)
 {
