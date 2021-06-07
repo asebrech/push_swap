@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 11:02:40 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/02 19:43:44 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/07 14:44:36 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	ft_rotate(t_list **lst, char c)
 
 	if (*lst && (*lst)->next)
 	{
-		new = ft_lstnew((*lst)->content);
+		new = ft_lstnew((*lst)->nb);
+		new->mob = 0;
 		ft_lstadd_back(lst, new);
 		new = *lst;
 		*lst = (*lst)->next;

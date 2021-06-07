@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 13:50:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/02 21:08:43 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/03 14:49:26 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	ft_nodouble(int ac, int *tab)
 	while (i < ac)
 	{
 		j = 1;
-		while (tab[i + j])
+		while (i + j < ac)
 		{
 			if (tab[i] == tab[i + j])
 				ft_exit_tab(tab);

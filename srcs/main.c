@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/02 21:32:20 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:07:39 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,57 @@ void	printlst(t_list *lst)
 	{
 		while (lst)
 		{
-			printf ("%d ", lst->content);
+			printf ("%d ", lst->nb);
 			lst = lst->next;
 		}
 		printf("\n");
 	}
 }
 
-int	main(int ac, char **av)
+static void	ft_exit(void)
 {
-	int		*tab;
-	int		i;
-	char	**strs;
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
+
+static void	ft_exec(int *tab, int len)
+{
 	t_list	*a;
 	t_list	*b;
 
 	b = NULL;
+	a = ft_filllst(len, tab);
+	ft_quicksort(tab, len);
+	push_swap(&a, &b, tab, len);
+	printlst(a);
+	if (b)
+		printlst(b);
+	ft_lstclear(&a);
+	ft_lstclear(&b);
+	free(tab);
+}
+
+int	main(int ac, char **av)
+{
+	int		len;
+	int		*tab;
+	char	**strs;
+
 	strs = ft_split(av[1], ' ');
-	i = 0;
-	while (strs[i])
-		i++;
-	if (i > 1)
+	len = 0;
+	while (strs[len])
+		len++;
+	if (len > 1)
 	{
-		tab = ft_filltab(i, strs);
-		a = ft_filllst(i, tab);
-		push_swap(&a, &b, tab, i);
+		if (av[2])
+			ft_exit();
+		tab = ft_filltab(len, strs);
 	}
 	else
 	{
 		tab = ft_filltab(ac - 1, &av[1]);
-		a = ft_filllst(ac - 1, tab);
-		push_swap(&a, &b, tab, ac - 1);
+		len = ac - 1;
 	}
-	free(tab);
+	ft_exec(tab, len);
 	return (0);
 }

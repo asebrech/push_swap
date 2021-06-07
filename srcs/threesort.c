@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   threesort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 15:31:19 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/03 15:14:32 by asebrech         ###   ########.fr       */
+/*   Created: 2021/06/04 11:36:18 by asebrech          #+#    #+#             */
+/*   Updated: 2021/06/04 12:29:08 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstdelone(t_list *lst)
+static int *ft_tab(t_list
+
+void	ft_threesort(t_list **a, t_list **b)
 {
-	if (lst)
-	{
-		free(lst);
-	}
 }

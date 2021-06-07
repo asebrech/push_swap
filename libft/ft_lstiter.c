@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 16:00:11 by asebrech          #+#    #+#             */
-/*   Updated: 2021/05/25 13:11:15 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/07 14:36:04 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, int (f)(int))
 		return ;
 	while (lst)
 	{
-		f(lst->content);
+		f(lst->nb);
 		lst = lst->next;
 	}
 }

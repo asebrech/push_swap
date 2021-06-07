@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:43:29 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/02 19:35:46 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/07 14:44:05 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ void	ft_swap(t_list **lst, char c)
 
 	if (*lst && (*lst)->next)
 	{
-		tmp = (*lst)->content;
-		(*lst)->content = (*lst)->next->content;
-		(*lst)->next->content = tmp;
+		(*lst)->next->mob = 0;
+		tmp = (*lst)->nb;
+		(*lst)->nb = (*lst)->next->nb;
+		(*lst)->next->nb = tmp;
 		if (c == 'a')
 			ft_putstr_fd("sa\n", 1);
 		else if (c == 'b')
