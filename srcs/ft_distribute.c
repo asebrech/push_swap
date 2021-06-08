@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:56:17 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/08 10:17:30 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:10:30 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ int	ft_distribute(t_list **a, t_list **b, int *tab, int len)
 
 	m1 = median1(tab, len);
 	m2 = median2(tab, len);
+	printf ("a = %d\n", (*a)->mob);
+   	if (*b)	
+		printf ("b = %d\n", (*b)->mob); 
 	med = 0;
 	if (((*a)->mob && (*a)->nb > m1 && (*a)->nb < m2 && intab(*a, tab, len))
 		|| ((*a)->mob && m1 == m2 && (*a)->nb == m1 && intab(*a, tab, len)))

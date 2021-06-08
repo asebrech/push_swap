@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:58:59 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/08 10:56:55 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:06:12 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,28 @@ static	int	distrib_loop(t_list **a, t_list **b, int *tab, int len)
 	i = 0;
 	med = 0;
 	ft_reset(*a, *b);
-	while (i++ < len)
+	while (i < len)
+	{
 		med += ft_distribute(a, b, tab, len);
-	while (med--)
+		i++;
+	}
+	i = 0;
+	while (i < med)
+	{
 		ft_push(b, a, 'b');
+		i++;
+	}
 	return (med);
 }
 
 void	push_swap(t_list **a, t_list **b, int *tab, int len)
 {
-	int			med;
 	static int	cat = -2;
 
 	cat++;
-	med = 0;
+	printf("%d\n", len);
 	if (len > 2)
-		med = distrib_loop(a, b, tab, len);
+		distrib_loop(a, b, tab, len);
 	else if (cat % 3 == 0)
 	{
 		recover_large(a, len);
