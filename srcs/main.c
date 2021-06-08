@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/08 12:13:01 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/08 13:46:26 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,31 @@ void	printlst(t_list *lst)
 	}
 }
 
-static void	ft_exit(void)
+static int	is_sort(int *tab, int len)
 {
-	ft_putstr_fd("Error\n", 2);
-	exit(1);
+	int	i;
+	int	*tmp;
+
+	tmp = malloc(sizeof(int) * len);
+	i = 0;
+	while (i < len)
+	{
+		tmp[i] = tab[i];
+		i++;
+	}
+	ft_quicksort(tab, len);
+	i = 0;
+	while (i < len)
+	{
+		if (tmp[i] != tab[i])
+		{
+			free(tmp);
+			return (0);
+		}
+		i++;
+	}
+	free(tmp);
+	return (1);
 }
 
 static void	ft_exec(int *tab, int len)
@@ -38,7 +59,8 @@ static void	ft_exec(int *tab, int len)
 
 	b = NULL;
 	a = ft_filllst(len, tab);
-	ft_quicksort(tab, len);
+	if (is_sort(tab, len))
+		return ;
 	if (len <= 3)
 		ft_threesort(&a, len);
 	else
@@ -63,7 +85,10 @@ static int	ft_arg(int ac, char **av, int **tab)
 	if (len > 1)
 	{
 		if (av[2])
-			ft_exit();
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
 		*tab = ft_filltab(len, strs);
 	}
 	else
