@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/07 15:07:39 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:10:40 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ static void	ft_exec(int *tab, int len)
 	b = NULL;
 	a = ft_filllst(len, tab);
 	ft_quicksort(tab, len);
-	push_swap(&a, &b, tab, len);
+	if (len <= 3)
+		ft_threesort(&a, &b, tab, len);
+	else
+		push_swap(&a, &b, tab, len);
 	printlst(a);
 	if (b)
 		printlst(b);

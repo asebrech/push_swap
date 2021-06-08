@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 16:13:10 by asebrech          #+#    #+#              #
-#    Updated: 2021/06/07 15:59:04 by asebrech         ###   ########.fr        #
+#    Updated: 2021/06/08 10:43:54 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC =	move/ft_push.c \
 	srcs/push_swap_utiles.c \
 	srcs/ft_fill.c\
 	srcs/ft_quicksort.c \
-	srcs/ft_distribute.c
+	srcs/ft_distribute.c \
+	srcs/recovery.c
 OBJ = $(SRC:.c=.o)
 RM = rm -rf
 
