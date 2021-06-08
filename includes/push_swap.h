@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:45:15 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/08 11:10:44 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/08 11:51:20 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 void	push_swap(t_list **a, t_list **b, int *tab, int len);
 void	ft_quicksort(int *tab, int len);
+void	ft_threesort(t_list **a, int len);
 void	ft_reset(t_list *a, t_list *b);
 void	recover_large(t_list **a, int len);
 void	recover_medium(t_list **a, t_list **b, int len);

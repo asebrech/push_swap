@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/08 11:10:40 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/08 12:13:01 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	ft_exec(int *tab, int len)
 	a = ft_filllst(len, tab);
 	ft_quicksort(tab, len);
 	if (len <= 3)
-		ft_threesort(&a, &b, tab, len);
+		ft_threesort(&a, len);
 	else
 		push_swap(&a, &b, tab, len);
 	printlst(a);
@@ -51,10 +51,9 @@ static void	ft_exec(int *tab, int len)
 	free(tab);
 }
 
-int	main(int ac, char **av)
+static int	ft_arg(int ac, char **av, int **tab)
 {
 	int		len;
-	int		*tab;
 	char	**strs;
 
 	strs = ft_split(av[1], ' ');
@@ -65,13 +64,24 @@ int	main(int ac, char **av)
 	{
 		if (av[2])
 			ft_exit();
-		tab = ft_filltab(len, strs);
+		*tab = ft_filltab(len, strs);
 	}
 	else
 	{
-		tab = ft_filltab(ac - 1, &av[1]);
+		*tab = ft_filltab(ac - 1, &av[1]);
 		len = ac - 1;
 	}
+	return (len);
+}
+
+int	main(int ac, char **av)
+{
+	int		len;
+	int		*tab;
+
+	if (ac <= 1)
+		return (0);
+	len = ft_arg(ac, av, &tab);
 	ft_exec(tab, len);
 	return (0);
 }
