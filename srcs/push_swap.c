@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:58:59 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/10 11:36:46 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/10 11:46:42 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ void	push_swap(t_list **a, t_list **b, int *tab, int len)
 	int	i;
 
 	i = 0;
-	//printf("len = %d\n", len);
-	//printf("cat = %d\n", cat);
 	ft_reset(a, b);
 	if (len > 2)
 	{

@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 10:52:12 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/10 11:40:40 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/10 11:45:53 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,4 @@ void	ft_recovery(t_list **a, t_list **b, int *tab, int len)
 		ft_push(a, b, 'a');
 		twosort(a);
 	}
-	
 }
