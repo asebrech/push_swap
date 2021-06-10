@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:58:59 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/08 15:06:12 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/09 16:55:26 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static	int	distrib_loop(t_list **a, t_list **b, int *tab, int len)
 
 	i = 0;
 	med = 0;
-	ft_reset(*a, *b);
 	while (i < len)
 	{
 		med += ft_distribute(a, b, tab, len);
@@ -54,25 +53,32 @@ static	int	distrib_loop(t_list **a, t_list **b, int *tab, int len)
 
 void	push_swap(t_list **a, t_list **b, int *tab, int len)
 {
-	static int	cat = -2;
+	static int	cat = 0;
 
-	cat++;
-	printf("%d\n", len);
+	printf("len = %d\n", len);
+	printf("cat = %d\n", cat);
+	ft_reset(a, b);
 	if (len > 2)
+	{
 		distrib_loop(a, b, tab, len);
+	}
 	else if (cat % 3 == 0)
 	{
-		recover_large(a, len);
+		recover_large(a, tab, len);
+		cat++;
 		return ;
 	}
 	else if (cat % 3 == 1)
 	{
 		recover_medium(a, b, len);
+		cat++;
 		return ;
 	}
 	else if (cat % 3 == 2)
 	{
-		recover_small(a, b, len);
+		if (len != 2)
+			recover_small(a, b, len);
+		cat++;
 		return ;
 	}	
 	ft_relarge(a, b, tab, len);

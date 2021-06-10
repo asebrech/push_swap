@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:56:17 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/08 15:10:30 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/09 15:24:33 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_medium(t_list **a, t_list **b, int *tab, int len)
 	int	med;
 
 	med = 0;
-	if ((*a)->mob && intab(*a, tab, len))
+	if ((*a)->mob && intab(*a, tab, len) && len != 2)
 	{
 		ft_push(b, a, 'b');
 	}
@@ -44,7 +44,7 @@ static int	ft_medium(t_list **a, t_list **b, int *tab, int len)
 
 static void	ft_large(t_list **a, t_list **b, int *tab, int len)
 {
-	if ((*a)->mob && intab(*a, tab, len))
+	if ((*a)->mob && intab(*a, tab, len) && len != 2)
 	{
 		ft_rotate(a, 'a');
 	}
@@ -63,9 +63,10 @@ int	ft_distribute(t_list **a, t_list **b, int *tab, int len)
 
 	m1 = median1(tab, len);
 	m2 = median2(tab, len);
-	printf ("a = %d\n", (*a)->mob);
-   	if (*b)	
-		printf ("b = %d\n", (*b)->mob); 
+	//printf ("m1 = %d, m2 = %d\n", m1, m2);
+	//printf ("a = %d\n", (*a)->mob);
+   	//if (*b)	
+		//printf ("b = %d\n", (*b)->mob); 
 	med = 0;
 	if (((*a)->mob && (*a)->nb > m1 && (*a)->nb < m2 && intab(*a, tab, len))
 		|| ((*a)->mob && m1 == m2 && (*a)->nb == m1 && intab(*a, tab, len)))
@@ -81,7 +82,7 @@ int	ft_distribute(t_list **a, t_list **b, int *tab, int len)
 		ft_small(a, b, tab, len);
 	else if ((*a)->mob && (*a)->nb >= m2 && intab(*a, tab, len))
 		ft_large(a, b, tab, len);
-	else if (*b && (*b)->mob && (*b)->nb >= m2 && intab(*a, tab, len))
+	else if (*b && (*b)->mob && (*b)->nb >= m2 && intab(*b, tab, len))
 		ft_large(a, b, tab, len);
 	return (med);
 }

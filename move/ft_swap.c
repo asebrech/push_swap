@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:43:29 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/07 14:44:05 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:53:06 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ft_swap(t_list **lst, char c)
 
 	if (*lst && (*lst)->next)
 	{
-		(*lst)->next->mob = 0;
 		tmp = (*lst)->nb;
 		(*lst)->nb = (*lst)->next->nb;
 		(*lst)->next->nb = tmp;
