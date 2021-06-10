@@ -6,12 +6,13 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/08 13:46:26 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/10 11:52:42 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//fonction printlst a supprimer !!!
 void	printlst(t_list *lst)
 {
 	if (lst)
