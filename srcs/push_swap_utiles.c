@@ -6,27 +6,18 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:49:00 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/10 11:03:38 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/11 14:27:56 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	median1(int *tab, int len)
+int	median(int *tab, int len)
 {
-	if (len == 3)
-		return (tab[len / 3]);
-	return (tab[len / 3 - 1]);
-}
-
-int	median2(int *tab, int len)
-{
-	if (len == 3)
-		return (tab[len / 3]);
-	if (len % 3 == 1 || len % 3 == 0)
-		return (tab[len / 3 * 2]);
+	if (len / 2 == 1)
+		return (tab[len / 2 + 1]);
 	else
-		return (tab[len / 3 * 2 + 1]);
+		return (tab[len / 2]);
 }
 
 int	intab(t_list *lst, int *tab, int len)
