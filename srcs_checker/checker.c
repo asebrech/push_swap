@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 16:36:25 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/13 17:41:27 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/13 19:28:55 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,17 @@ static void	is_sort(t_list **a, int *tab, int len)
 	ft_putstr_fd("OK\n", 1);
 }
 
-static void	ft_exit(void)
+static void	ft_exit(t_list **a, t_list **b, int *tab, char *line)
 {
+	ft_lstclear(a);
+	ft_lstclear(b);
+	free(tab);
+	free(line);
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
 
-static void	swap_push(t_list **a, t_list **b, char *line)
+static int	swap_push(t_list **a, t_list **b, char *line)
 {
 	if (ft_strncmp("pa", line, 4) == 0)
 		ft_push(a, b, 'c');
@@ -61,7 +65,8 @@ static void	swap_push(t_list **a, t_list **b, char *line)
 	else if (ft_strncmp("ss", line, 4) == 0)
 		ft_double_swap(a, b, 'c');
 	else
-		ft_exit();
+		return (1);
+	return (0);
 }
 
 void	checker(t_list **a, t_list **b, int *tab, int len)
@@ -70,7 +75,11 @@ void	checker(t_list **a, t_list **b, int *tab, int len)
 
 	line = NULL;
 	while (get_next_line(0, &line) != 0)
-		swap_push(a, b, line);
+	{
+		if (swap_push(a, b, line))
+			ft_exit(a, b, tab, line);
+		free(line);
+	}
 	free(line);
 	is_sort(a, tab, len);
 }

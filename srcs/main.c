@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/13 17:38:52 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/13 19:12:21 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static void	free_strs(char **strs)
 		free(strs[i]);
 		i++;
 	}
+	free(strs);
 }
 
 static int	ft_arg(int ac, char **av, int **tab)
@@ -82,6 +83,7 @@ static int	ft_arg(int ac, char **av, int **tab)
 	{
 		if (av[2])
 		{
+			free_strs(strs);
 			ft_putstr_fd("Error\n", 2);
 			exit(1);
 		}
@@ -93,7 +95,6 @@ static int	ft_arg(int ac, char **av, int **tab)
 		len = ac - 1;
 	}
 	free_strs(strs);
-	free(strs);
 	return (len);
 }
 
