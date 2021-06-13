@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/10 11:52:42 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/13 10:41:43 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,18 @@ static void	ft_exec(int *tab, int len)
 	free(tab);
 }
 
+static void	free_strs(char **strs)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (strs[i])
+	{
+		free(strs[i]);
+		i++;
+	}
+}
+
 static int	ft_arg(int ac, char **av, int **tab)
 {
 	int		len;
@@ -97,6 +109,8 @@ static int	ft_arg(int ac, char **av, int **tab)
 		*tab = ft_filltab(ac - 1, &av[1]);
 		len = ac - 1;
 	}
+	free_strs(strs);
+	free(strs);
 	return (len);
 }
 
