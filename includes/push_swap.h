@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:45:15 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/11 14:19:49 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/13 17:53:51 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include "../libft/libft.h"
 # include "move.h"
-
-# include <stdio.h>
-
-void	printlst(t_list *lst);
 
 void	push_swap(t_list **a, t_list **b, int *tab, int len);
 void	ft_quicksort(int *tab, int len);
