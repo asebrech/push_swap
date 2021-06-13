@@ -6,7 +6,7 @@
 #    By: asebrech <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 16:13:10 by asebrech          #+#    #+#              #
-#    Updated: 2021/06/13 17:32:51 by asebrech         ###   ########.fr        #
+#    Updated: 2021/06/13 18:36:07 by asebrech         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ $(NAME) : $(OBJ)
 	ranlib $(NAME)
 	$(CC) $(CFLAGS) -I$(HEADER) srcs/main.c -L. -lpush_swap -o $(EXEC)
 
-checker : $(OBJ_B)
+checker : $(NAME) $(OBJ_B)
 	cp $(NAME) $(NAME_B)
 	ar rc $(NAME_B) $(OBJ_B)
 	ranlib $(NAME_B)
