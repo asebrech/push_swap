@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.h                                             :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/26 14:03:43 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/13 15:57:46 by asebrech         ###   ########.fr       */
+/*   Created: 2021/06/13 10:50:02 by asebrech          #+#    #+#             */
+/*   Updated: 2021/06/13 16:48:22 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MOVE_H
-# define MOVE_H
-
+#ifndef CHECKER_H
+# define CHECKER_H
+# define BUFFER_SIZE  4
 # include "push_swap.h"
+# include "get_next_line.h"
 
-void	ft_swap(t_list **lst, char c);
-void	ft_double_swap(t_list **a, t_list **b, char c);
-void	ft_push(t_list **a, t_list **b, char c);
-void	ft_rotate(t_list **lst, char c);
-void	ft_double_rotate(t_list **a, t_list **b, char c);
-void	ft_rrotate(t_list **lst, char c);
-void	ft_double_rrotate(t_list **a, t_list **b, char c);
+void	checker(t_list **a, t_list **b, int *tab, int len);
 
 #endif

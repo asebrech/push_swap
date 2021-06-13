@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.h                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/26 14:03:43 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/13 15:57:46 by asebrech         ###   ########.fr       */
+/*   Created: 2021/04/10 15:50:57 by asebrech          #+#    #+#             */
+/*   Updated: 2021/06/13 10:49:38 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MOVE_H
-# define MOVE_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include <unistd.h>
+# include <stdlib.h>
+# include "checker.h"
 
-# include "push_swap.h"
-
-void	ft_swap(t_list **lst, char c);
-void	ft_double_swap(t_list **a, t_list **b, char c);
-void	ft_push(t_list **a, t_list **b, char c);
-void	ft_rotate(t_list **lst, char c);
-void	ft_double_rotate(t_list **a, t_list **b, char c);
-void	ft_rrotate(t_list **lst, char c);
-void	ft_double_rrotate(t_list **a, t_list **b, char c);
-
+int		get_next_line(int fd, char **line);
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strcpy(char *dst, char *src);
 #endif

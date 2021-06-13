@@ -3,41 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 09:43:39 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/13 17:38:52 by asebrech         ###   ########.fr       */
+/*   Created: 2021/06/13 16:38:43 by asebrech          #+#    #+#             */
+/*   Updated: 2021/06/13 17:38:14 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-static int	is_sort(int *tab, int len)
-{
-	int	i;
-	int	*tmp;
-
-	tmp = malloc(sizeof(int) * len);
-	i = 0;
-	while (i < len)
-	{
-		tmp[i] = tab[i];
-		i++;
-	}
-	ft_quicksort(tab, len);
-	i = 0;
-	while (i < len)
-	{
-		if (tmp[i] != tab[i])
-		{
-			free(tmp);
-			return (0);
-		}
-		i++;
-	}
-	free(tmp);
-	return (1);
-}
+#include "checker.h"
 
 static void	ft_exec(int *tab, int len)
 {
@@ -46,12 +19,8 @@ static void	ft_exec(int *tab, int len)
 
 	b = NULL;
 	a = ft_filllst(len, tab);
-	if (is_sort(tab, len))
-		return ;
-	if (len <= 3)
-		ft_threesort(&a, len);
-	else
-		push_swap(&a, &b, tab, len);
+	ft_quicksort(tab, len);
+	checker(&a, &b, tab, len);
 	ft_lstclear(&a);
 	ft_lstclear(&b);
 	free(tab);
@@ -99,8 +68,8 @@ static int	ft_arg(int ac, char **av, int **tab)
 
 int	main(int ac, char **av)
 {
-	int		len;
-	int		*tab;
+	int	len;
+	int	*tab;
 
 	if (ac <= 1)
 		return (0);

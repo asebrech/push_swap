@@ -6,24 +6,29 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 11:41:18 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/10 15:53:27 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/13 15:55:12 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_double_rrotate(t_list **a, t_list **b)
+void	ft_double_rrotate(t_list **a, t_list **b, char c)
 {
 	if (*a && (*a)->next && *b && (*b)->next)
 	{
 		ft_rrotate(a, 'c');
 		ft_rrotate(b, 'c');
-		ft_putstr_fd("rrr\n", 1);
+		if (c != 'c')
+			ft_putstr_fd("rrr\n", 1);
 	}
-	else if ((*a && (*a)->next) && (!*b || !(*b)->next))
+	else if ((*a && (*a)->next) && (!*b || !(*b)->next) && c != 'c')
 		ft_rrotate(a, 'a');
-	else if ((*b && (*b)->next) && (!*a || !(*a)->next))
+	else if ((*a && (*a)->next) && (!*b || !(*b)->next) && c == 'c')
+		ft_rrotate(a, 'c');
+	else if ((*b && (*b)->next) && (!*a || !(*a)->next) && c != 'c')
 		ft_rrotate(b, 'b');
+	else if ((*b && (*b)->next) && (!*a || !(*a)->next) && c == 'c')
+		ft_rrotate(b, 'c');
 }
 
 static t_list	*second_last(t_list *lst)
