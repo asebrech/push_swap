@@ -6,7 +6,7 @@
 /*   By: asebrech <asebrech@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 11:41:18 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/13 15:55:12 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/14 10:30:09 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,6 @@ void	ft_double_rrotate(t_list **a, t_list **b, char c)
 		ft_rrotate(b, 'b');
 	else if ((*b && (*b)->next) && (!*a || !(*a)->next) && c == 'c')
 		ft_rrotate(b, 'c');
-}
-
-static t_list	*second_last(t_list *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->next->next)
-		lst = lst->next;
-	return (lst);
 }
 
 void	ft_rrotate(t_list **lst, char c)

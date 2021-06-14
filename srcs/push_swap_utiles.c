@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:49:00 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/11 14:27:56 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/14 11:08:22 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,22 @@ void	ft_reset(t_list **a, t_list **b)
 	}
 	*a = tmp;
 	*b = tmp2;
+}
+
+t_list	*second_last(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next->next)
+		lst = lst->next;
+	return (lst);
+}
+
+t_list	*second_second_last(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next->next->next)
+		lst = lst->next;
+	return (lst);
 }

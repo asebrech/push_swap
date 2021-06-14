@@ -6,7 +6,7 @@
 /*   By: asebrech <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 09:58:59 by asebrech          #+#    #+#             */
-/*   Updated: 2021/06/12 13:38:52 by asebrech         ###   ########.fr       */
+/*   Updated: 2021/06/14 10:56:59 by asebrech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,13 @@ static void	second_part(t_list **a, t_list **b, int *tab, int len)
 	int	i;
 
 	i = 0;
-	while (i < len)
-	{
-		ft_recovery(a, b, tab, len);
-		i++;
-	}
-	i = 0;
-	if (!intab(ft_lstlast(*a), tab, len))
+	if (intab((*a), tab, len) && intab(ft_lstlast(*a), tab, len))
+		ft_threesort(a, len);
+	else
 	{
 		while (i < len)
-		{	
-			ft_rotate(a, 'a');
+		{
+			ft_recovery(a, b, &tab[i], 1);
 			i++;
 		}
 	}
